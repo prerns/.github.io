@@ -1,0 +1,70 @@
+.picture {
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+
+.picture:hover {
+  filter: brightness(80%);
+}
+
+.picture-container {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 80%;
+  margin: auto;
+  gap: 12px;
+}
+
+body {
+  margin-top: 5%;
+  background-color: #9dc7c9;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: white;
+}
+
+.page-container {
+  text-align: center;
+  width: 80%;
+  margin-top: 5rem;
+  margin: auto;
+}
+
+.bouncing-text {
+  text-align: center;
+  display: flex;
+  font-size: 70px;
+  font-family: arial white;  
+  justify-content: center;
+  gap: 8px;
+}
+
+.prerna, .portfolio, .page{
+  color: white;
+  text-shadow: 0 3px #4cc9f0, 0 5px #4cc9f0, 0 7px #4cc9f0;
+}
+
+@keyframes bounce {
+  0%   { transform: scale(1,1) translateY(0); }
+  10%  { transform: scale(1.1,.9) translateY(0); }
+  30%  { transform: scale(.9,1.1)   translateY(-55px);}
+  50%  { transform: scale(1.05,.95) translateY(0); }
+  58%  { transform: scale(1,1) translateY(-7px); }
+  65%  { transform: scale(1,1) translateY(0);}
+  100% { transform: scale(1,1) translateY(0);}
+}
+
+.prerna {
+animation: bounce 1s ease infinite .1s;
+}
+
+.portfolio {
+animation: bounce 1s ease infinite .2s;
+}
+
+.page {
+animation: bounce 1s ease infinite .3s;
+}

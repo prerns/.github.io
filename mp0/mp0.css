@@ -1,0 +1,18 @@
+body {
+    background-color: #d1cd88;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+  }
+
+.mp0-container {
+    width: 80%;
+    margin: auto;
+    margin-top: 5rem;
+  }
+  
+  .picture {
+    width: 600px;
+    border-radius: 10px;
+    object-fit: contain;
+    aspect-ratio: 2;
+  }
