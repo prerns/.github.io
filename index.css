@@ -13,8 +13,8 @@
 
 .picture-container {
   display: flex;
-  flex-wrap: nowrap;
-  width: 80%;
+  flex-wrap: wrap;
+  width: 85%;
   margin: auto;
   gap: 12px;
 }
