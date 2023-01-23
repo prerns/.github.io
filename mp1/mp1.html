@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./mp1.css" />
+  </head>
+  <body>
+    <div class="mp1-container">
+      <div>
+        <h1>MP1 Writeup</h1>
+        <h2>Overview and Usage</h2>
+        <p class="intro-paragraph">
+           I designed a bad word tracker Chrome Extension. The purpose of this extension is for you to be able 
+           to scan webpages and get a understanding of the profanity you may encounter while reading the page.
+           By clicking the scan button, the extension will scan the webpage and cross reference a list of 
+           collected bad words and report back on the popup how many bad words were found. It takes up to 
+           a couple seconds for the popup to scan the page so please be patient to see the output. <em>I would recommend
+           for testing you use this extension on maybe a lyrics webpage for a song that you know has bad words, or
+           a website that lists out bad words.</em>
+          <img 
+          class="picture"
+          src="/images/ezgif.com-gif-maker copy.gif" />
+        </p>
+        <h2>Development Process</h2>
+        <p>
+          <ul>
+            <li>Cloned the e-nator example and removed all elemented I wasn't going to use such as the check box.</li>
+            <li>Sent an alert from content script that bushing the button on the popup was recieved.</li>
+            <li>Created a list of common and easy words to scan for first.</li>
+            <li>Adapted the function in enator example to fit my usage. This included adapting a function to 
+                create a list of words for encountered text nodes and cross referecing them with my list of common
+                words and track how many were found.
+            </li>
+            <li>Created alerts for all my debuggin in every function to see the flow of the code.</li>
+            <li>Returned a alert with the counter number of how many words were found on a page.</li>
+            <img 
+            class="picture"
+            src="/images/DF6B1761-166E-460C-B9C1-135D4DBAD845.jpeg" />
+            <li>Sent that counter back to popup file and added HTML to my popup to display the number of words. </li>
+            <li>Updated my list of words to now be a set of bad words to look for.</li>
+          </ul>
+        </p>
+        <h2>Issue Deep-Dive</h2>
+        <p>
+            One issue that I encountered and took a long time to resolve was trying to add the HTML of how
+            many bad words were found. I performed my logic of counting how many bad words were on a page in 
+            my content script file and thought that resultantly the content script file is the file that should
+            communicate with the popup HTML file and add the components of HTML with the counter number to display.
+            However, after having added the code in my content script file and adding the file as a source in the HTML 
+            file, nothing was showing up on popup. I was stuck. After trying a couple different things of changing the HTML 
+            code, still nothing was working. During OH with Hannah, I learned that the content script file cannot communicate 
+            with the popup files. That is becuase the content script runs in its own world and if I do want to communicate 
+            content from the content script to the popup, I have to do so by sending a message back to the popup file. I did this 
+            by looking at the chrome developer documentation and seeing how to send a message to the popup file. Then
+            I recieved the message with the counter value in the popup file and then used that value and the code for 
+            how to add HTML to the popup in the file. This worked!
+        </p>
+        <h2>Ideas and Future</h2>
+        <p>
+          <ul>
+            <li>
+              Pay the $5 and pay for chrome to make my extension available for others to download and use.
+            </li>
+            <li>
+              Provide a list of the bad words it found on the popup as well. 
+            </li>
+            <li>
+              Have some sort of metric of whether or not the webpage is child appropriate or not.  
+            </li>
+          </ul>
+        </p>
+        <h2>Kudos</h2>
+        <p>
+            I want to give Kudos to Raina and Hannah. I would also like to give Kudos to the e-nator extension
+            example that I was able to heavily use the framework for and adapt to my need. 
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
