@@ -1,0 +1,100 @@
+<html>
+  <head>
+    <title>Random Chritmas Tree</title>
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+    <script>
+        function setup() {
+  createCanvas(windowWidth, windowHeight);
+  //star(810, 190, 30, 70, 5);
+}
+
+function draw() {
+  background(34, 5, 100);
+  stroke(140, 100, 56);
+  fill(140, 100, 56)
+
+  push();
+  translate(windowWidth/2, 0);
+  translate(-400,0);
+  rect(385, 480, 30, 50);
+  drawTree();
+  drawAllOrnaments();
+  pop();
+
+    
+  push();
+  translate(width * 0.5, height * 0.12);
+  rotate(frameCount / -100.0);
+  star(0, 0, 30, 70, 5);
+  pop();
+
+
+ }
+
+ function windowResized(){
+  resizeCanvas(windowWidth, windowHeight);
+ }
+
+function star(x, y, radius1, radius2, npoints) {
+  scale(0.5);
+  stroke(240, 227, 91);
+  fill(240, 227, 91);
+  let angle = TWO_PI / npoints;
+  let halfAngle = angle / 2.0;
+  beginShape();
+  for (let a = 0; a < TWO_PI; a += angle) {
+    let sx = x + cos(a) * radius2;
+    let sy = y + sin(a) * radius2;
+    vertex(sx, sy);
+    sx = x + cos(a + halfAngle) * radius1;
+    sy = y + sin(a + halfAngle) * radius1;
+    vertex(sx, sy);
+  }
+  endShape(CLOSE);
+}
+
+function drawTriangle(x1, y1, x2, y2, x3, y3){
+  stroke(107,142,35);
+  fill(107,142,35);
+  triangle(x1, y1, x2, y2, x3, y3);
+}
+
+function drawTree() { 
+  drawTriangle(450, 180, 400, 110, 350, 180);
+  drawTriangle(475, 220, 400, 160, 325, 220);
+  drawTriangle(500, 270, 400, 210, 300, 270);
+  drawTriangle(525, 330, 400, 260, 275, 330);
+  drawTriangle(550, 380, 400, 310, 250, 380);
+  drawTriangle(575, 430, 400, 360, 225, 430);
+  drawTriangle(600, 480, 400, 410, 200, 480); 
+}
+
+function drawOrnament(x, y, radius, r, g, b){
+  fill(r, g, b);
+  circle(x, y, radius);
+}
+
+function drawAllOrnaments() {
+  drawOrnament(370, 180, 20, 250, 147, 199);
+  drawOrnament(480, 310, 20, 148, 206, 242);
+  drawOrnament(300, 410, 20, 200, 147, 199);
+  drawOrnament(530, 470, 20, 250, 147, 3);
+  drawOrnament(370, 340, 20, 250, 3, 199);
+  drawOrnament(435, 220, 20, 164, 143, 235);
+  drawOrnament(460, 400, 20, 3, 147, 199);
+  drawOrnament(320, 270, 20, 3, 147, 199);
+  drawOrnament(370, 450, 20, 3, 147, 199);
+  drawOrnament(270, 480, 20, 61, 156, 78);
+}
+
+    </script>
+  </head>
+</html>

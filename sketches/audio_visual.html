@@ -1,0 +1,153 @@
+<html>
+  <head>
+    <title>Singing Chritmas Tree</title>
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.js"> </script>
+    <script>
+        let song;
+        let songPlaying = false;
+        let isHovering = [false, false];
+
+        function preload(){
+            song = loadSound('/assets/christmas_1.mp3');
+        }
+
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+            background(34, 5, 100);
+            ornament1 = [370, 180];
+            ornament2 = [480, 310];
+            ornament3 = [300, 410];
+            ornament4 = [530, 470];
+            ornament5 = [370, 450];
+            ornament6 = [270, 480];
+        }
+
+        function draw() {
+            stroke(140, 100, 56);
+            fill(140, 100, 56)
+            rect(385, 480, 30, 50);
+            drawTree();
+            drawAllOrnaments();
+            star(810, 190, 30, 70, 5);
+            if (isHovering[0] | isHovering[1] | isHovering[2] | isHovering[3] | isHovering[4] | isHovering[5]) {
+                if (songPlaying == false){
+                    playMusic();
+                    songPlaying = true;
+                }
+            }
+            else {
+                stopMusic();
+                songPlaying = false;
+            }
+        }
+
+        function playMusic(){
+            song.play();
+        }
+            
+
+        function stopMusic(){
+            song.stop();
+        }
+
+        function star(x, y, radius1, radius2, npoints) {
+            scale(0.5);
+            stroke(240, 227, 91);
+            fill(240, 227, 91);
+            let angle = TWO_PI / npoints;
+            let halfAngle = angle / 2.0;
+            beginShape();
+            for (let a = 0; a < TWO_PI; a += angle) {
+                let sx = x + cos(a) * radius2;
+                let sy = y + sin(a) * radius2;
+                vertex(sx, sy);
+                sx = x + cos(a + halfAngle) * radius1;
+                sy = y + sin(a + halfAngle) * radius1;
+                vertex(sx, sy);
+            }
+            endShape(CLOSE);
+        }
+
+        function drawTriangle(x1, y1, x2, y2, x3, y3){
+            stroke(107,142,35);
+            fill(107,142,35);
+            triangle(x1, y1, x2, y2, x3, y3);
+            }
+
+            function drawTree() { 
+            drawTriangle(450, 180, 400, 110, 350, 180);
+            drawTriangle(475, 220, 400, 160, 325, 220);
+            drawTriangle(500, 270, 400, 210, 300, 270);
+            drawTriangle(525, 330, 400, 260, 275, 330);
+            drawTriangle(550, 380, 400, 310, 250, 380);
+            drawTriangle(575, 430, 400, 360, 225, 430);
+            drawTriangle(600, 480, 400, 410, 200, 480); 
+            }
+
+            function drawOrnament(x, y, radius, r, g, b){
+            fill(r, g, b);
+            circle(x, y, radius);
+            }
+
+        function drawAllOrnaments() {
+            drawOrnament(370, 180, 40, 250, 147, 199);
+            drawOrnament(480, 310, 40, 148, 206, 242);
+            drawOrnament(300, 410, 40, 200, 147, 199);
+            drawOrnament(530, 470, 40, 250, 147, 3);
+            drawOrnament(370, 450, 40, 3, 147, 199);
+            drawOrnament(270, 480, 40, 61, 156, 78);
+            let d1 = dist(mouseX, mouseY, ornament1[0], ornament1[1]);
+            if (d1 <= 40){
+                isHovering[0] = true;
+            }
+            else {
+                isHovering[0] = false;
+            }
+            let d2 = dist(mouseX, mouseY, ornament2[0], ornament2[1]);
+            if (d2 <= 40){
+                isHovering[1] = true;
+            }
+            else {
+                isHovering[1] = false;
+            }
+            let d3 = dist(mouseX, mouseY, ornament3[0], ornament3[1]);
+            if (d3 <= 40){
+                isHovering[2] = true;
+            }
+            else {
+                isHovering[2] = false;
+            }
+            let d4 = dist(mouseX, mouseY, ornament4[0], ornament4[1]);
+            if (d4 <= 40){
+                isHovering[3] = true;
+            }
+            else {
+                isHovering[3] = false;
+            }
+            let d5 = dist(mouseX, mouseY, ornament5[0], ornament5[1]);
+            if (d5 <= 40){
+                isHovering[4] = true;
+            }
+            else {
+                isHovering[4] = false;
+            }
+            let d6 = dist(mouseX, mouseY, ornament6[0], ornament6[1]);
+            if (d6 <= 40){
+                isHovering[5] = true;
+            }
+            else {
+                isHovering[5] = false;
+            }
+        }
+    </script>
+  </head>
+</html>

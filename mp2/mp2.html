@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./mp2.css" />
+  </head>
+  <body>
+    <div class="mp2-container">
+      <div>
+        <h1>MP2 Writeup</h1>
+        <h2>Overview and Usage</h2>
+        <p class="intro-paragraph">
+          This project was a chance to explore P5js. I created 6 different images that each have a different 
+          functionality. I decided to have a Christmas Tree theme that remains the same for each of the 6 drawings 
+          and adds a new functionality in each drawing. 
+          <ul>
+            <li>Static Image: This image is a stand alone Christmas Tree</li>
+            <li>Random Image: This image radnomizes the size and color of each ornament on the tree.</li>
+            <li>Loop Image: This image features a spinning star on the tree.</li>
+            <li>Interactive Image: The user can click anywhere on the tree to add a new ornament.</li>
+            <li>Audio Image: The user can click on the screen to play a popular Christmas song.</li>
+            <li>Audio Visual Image: The user can hover over the ornaments on the tree to play Christmas songs.</li>
+          </ul>
+          <div class="tile-grid">
+            <a href="/sketch_gallery/sketch_gallery.html" style="--color: var(--purple)">
+                <div>Sketch Gallery</div>
+            </a>
+          </div>
+          <img 
+          class="picture"
+          src="/images/ezgif.com-video-to-gif.gif" />
+        </p>
+        <h2>Development Process</h2>
+        <p>
+          <ul>
+            <li>I created a statis basic Christmas tree first, inclusive of functions for each part of the tree so I could 
+                make a consice draw fcuntion and make any changes efficiently with the functions.
+            </li>
+            <li>For the random drawing I made multiple for loops to randomize the radius of each circle drawn
+                 as well as 3 random rgb values to pass into my ornament function. 
+            </li>
+            <li>To create an infinite loop, I looked at multiple online sources to find a way to create 
+                a spinning star. I did so finally by using the rotate functon avaiable in p5js. 
+            </li>
+            <li>Initially for the interactive picture I wanted to decorate the tree by drawing multiple line but ended up 
+                making the user click and add ornaments to the tree. I did so my creating a list and a circle function 
+                that tracked the users mouseX and mouseY coordinates on a click and added it to a draw list that then
+                drew circles where a user clicked. 
+            </li>
+            <li>I downloaded a mp3 of a popular Christmas song and played a song on a mouse click and off on 
+                another mouse click. I had to incorporate the sound library for p5js which was different 
+                than what I had done before.
+            </li>
+            <li>For combining an audio visual I had to search and examine a couple exampled of how 
+                to make music play on a hover over a certain shape. This was done so by calculating the distance
+                of the users mouse to the edge of the shape you're on. If its within the shape a function to play
+                the music will be run and once the distance is greater than the shape, the music will stop.
+            </li>
+            <img 
+            class="picture"
+            src="/images/MP2Unfinished.png" />
+          </ul>
+        </p>
+        <h2>Issue Deep-Dive</h2>
+        <p>
+            An issue that I encountered was in my audio visual drawing where I was hovering over an ornament 
+            and I was getting a distorted version of the song it should have been playing. It sounded like it was 
+            playing over it self over and over. After investigating I realized the problem to be that I was 
+            playing my song on a hover variable status in the draw loop. This means that my song was continously 
+            playing becuase the hover variable status was always true and the song would keep playing over and over. 
+            While I still wanted to keep my song playing in the draw loop I needed some sort of conditional to track 
+            whether or not the song was already playing. After messing around with a couple ways and places to put this 
+            variable, I opted for a global variable that would keep track of whether or not the song was already playing. 
+            It took a couple tries to figure out where in my code I should update this variable but I figured it out. 
+        </p>
+        <h2>Ideas and Future</h2>
+        <p>
+          <ul>
+            <li>
+              I would want to work on creating a more dynamic tree where the ornaments 
+              are placed randomly on the tree using its dimensions.
+            </li>
+            <li>
+              I would also like to have it so that each ornament plays a different song in the future.  
+            </li>
+            <li>
+              In the future I would want to incorporate the screen to play multiple colors when playing a song
+              in the audio drawing.
+            </li>
+          </ul>
+        </p>
+        <h2>Kudos</h2>
+        <p>
+            I want to give to Hannah and MacKenzie for helping me and debugging.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

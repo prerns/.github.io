@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>Interactive Chritmas Tree</title>
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.js"> </script>
+    <script>  
+        let song;
+        function setup() {
+            song = loadSound('/assets/christmas_1.mp3');
+            createCanvas(windowWidth, windowHeight);
+            background(255, 0, 0);
+        }
+
+        function mousePressed() {
+            if (song.isPlaying()) {
+                // .isPlaying() returns a boolean
+                song.stop();
+                background(255, 0, 0);
+            } else {
+                song.play();
+                background(0, 255, 0);
+            }
+        }
+    </script>
+  </head>
+</html>
