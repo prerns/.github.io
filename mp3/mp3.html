@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./mp3.css" />
+  </head>
+  <body>
+    <div class="mp3-container">
+      <div>
+        <h1>MP3 Writeup</h1>
+        <h2>Overview and Usage</h2>
+        <p class="intro-paragraph">
+          This project's objective was to combine two libraries to create a game and learn about dependencies 
+          and how toll rollup and deploy. My game is a "Save the Puupies" game that requires you to catch (hover over) 
+          atleast 15 puppies that are falling before they hit the water, otherwise you lose a point. Once you save 
+          15 puppies you win! The puppies are all falling at different speeds to make it more challenging. 
+          I combined the p5 and p5.play libraries in this project. 
+          <div class="tile-grid">
+            <a href="https://prerns.github.io/game/" style="--color: var(--purple)">
+                <div>Puppy Game</div>
+            </a>
+          </div>
+          <img 
+          class="picture"
+          src="/images/MP3.gif" />
+        </p>
+        <h2>Development Process</h2>
+        <p>
+          <ul>
+            <li>I first started by looking through looking at all the p5.play examples page and saw all the 
+                functions and features that were available to use in a game.
+            </li>
+            <li>After looking, I decided on the concept of my game. <em>Something falling and not being 
+                allowed to touch something else.</em>
+            </li>
+            <li>After deciding on my game concpet, I  went through the p5.play examples again and looked
+                for all the different elements that I would need for my game.  
+            </li>
+            <li>I found multiple examples that had features and functinalitlies that I needed. I started with 
+                copying over an example that had falling blocks. 
+            </li>
+            <li>I adapted the falling blocks to match the concept of my game. I created a loop to randomize 
+                the speed at which the blocks where falling. 
+            </li>
+            <li>I then found an example that made an object disappear on a mouse hover and implemented that onto 
+                my falling blocks. 
+            </li>
+            <li>After that I looked through the documentation for how to detect a collision/overlap of objects. I wanted
+                 the blocks to disappear/lose points if it collieded with the water at the bottom of the screen.  
+            </li>
+            <li>After implementing that I was able to take it to the customization phase of adding images/animations 
+                for my shapes such as the water block on the bottom and the falling blocks.  
+            </li>
+            <li>Finally, worked on the concept of winning and losing the game by keeping track of a score and displaying 
+                winning or losing text based on the score count. 
+            </li>
+            <li>I ended with working thorugh the rollup and deployment steps and worked thorugh some debugging steps throught that. 
+            </li>
+            <img 
+            class="picture"
+            src="/images/34BA38D9-333A-499E-85BB-9B3BD8690A44.jpeg" />
+          </ul>
+        </p>
+        <h2>Issue Deep-Dive</h2>
+        <p>
+            One issue I encountered was I had everything working locally when I did npm start. However, 
+            after following Hannah's steps and advice from Discord and adding the 5 scripts for p5 packages 
+            into hy index.html and then deploying it. The screen was blank and my game was not working. This 
+            did not make sense to me. However, after working with Hannah, we noticed that the packages and script that I had
+            initally added to index.html (and had commented out after adding the ones Hannah had showed) were 
+            an older version of p5 than the ones Hannah had added. Therefore, my code was not compatible with the 
+            packages/versions of p5.play that were added after. I had to then take those out and return to the original 
+            scipts that I had included to make the game run on deployment. 
+        </p>
+        <h2>Ideas and Future</h2>
+        <p>
+          <ul>
+            <li>
+              I would like to add audio effects to game such as everytime you a puppy hits the water 
+              or when you save a puppy. 
+            </li>
+            <li>
+              I would also like to add dogs falling at different times and not just different rates.  
+            </li>
+            <li>
+              In the future I would also like to add an option of what is falling and you have to save. 
+              The user could pick dogs, cats, flowers, etc.
+            </li>
+          </ul>
+        </p>
+        <h2>Kudos</h2>
+        <p>
+            I want to give to Hannah for staying late in OH to help me debug my deployment.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
