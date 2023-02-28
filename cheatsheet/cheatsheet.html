@@ -8,31 +8,19 @@
       <h2>CSS</h2>
       <p class="ingredient-list"> 
         <b>Bouncing Text</b>
-        <p>
-          <ul>
-            <li>
-              <code>
-                .bouncing-text {
+        <p><code>.bouncing-text {
                           text-align: center;
                           display: flex;
                           font-size: 70px;
                           font-family: arial white;  
                           justify-content: center;
                           gap: 8px;
-                        }
-              </code>
-            </li>
-            <li>
-              <code>
-                .prerna, .portfolio, .page{
+                        }</code></p>
+        <p><code>.prerna, .portfolio, .page{
                 color: white;
                 text-shadow: 0 3px #4cc9f0, 0 5px #4cc9f0, 0 7px #4cc9f0;
-                }
-              </code>
-            </li>
-            <li>
-              <code>
-                @keyframes bounce {
+                }</code></p>
+        <p><code>                @keyframes bounce {
                   0%   { transform: scale(1,1) translateY(0); }
                   10%  { transform: scale(1.1,.9) translateY(0); }
                   30%  { transform: scale(.9,1.1)   translateY(-55px);}
@@ -40,34 +28,50 @@
                   58%  { transform: scale(1,1) translateY(-7px); }
                   65%  { transform: scale(1,1) translateY(0);}
                   100% { transform: scale(1,1) translateY(0);}
-                }
-              </code>
-            </li>
-            <li>
-              <code>
-                .prerna {
+                }</code></p>
+        <p><code>.prerna {
                 animation: bounce 1s ease infinite .1s;
-                }
-              </code>
-            </li>
-            <li>
-              <code>
-                .portfolio {
+                }</code></p>
+        <p><code>.portfolio {
               animation: bounce 1s ease infinite .2s;
-              }
-             </code>
-            </li>
-            <li>
-              <code>
-                .page {
+              }</code></p>
+        <p><code>.page {
                 animation: bounce 1s ease infinite .3s;
-                }
-              </code>  
-            </li>   
-          </ul>
-   
+                }</code></p>
+      <h2>JavaScript</h2>
+      <p class="ingredient-list"> 
+        <b>Communicating between content scripts and the popus</b>
+        <p><code>chrome.runtime.onMessage.addListener((request) => {</code></p>
+        <p><code>console.log(request);</code></p>
+        <p><code>const para = document.createElement("p");</code></p>
+        <p><code>const scanResponseText = document.createTextNode("There were " + request + " bad words found on this page.");</code></p>
+        <p><code>para.appendChild(scanResponseText);</code></p>
+        <p><code>const element = document.getElementById("popup-content");</code></p>
+        <p><code>element.appendChild(para);</code></p>
+        <p><code>});</code></p>
         </p>
+      </p>
+      <h2>P5js</h2>
+      <b>Scaling to center on screen size</b>
+      <p class="ingredient-list">
+        <p><code>push();</code></p>
+        <p><code>translate(windowWidth/2, 0);</code></p>
+        <p><code>translate(-400,0);</code></p>
+        <p><code>rect(385, 480, 30, 50);</code></p>
+        <p><code>drawTree();</code></p>
+        <p><code>drawAllOrnaments();</code></p>
+        <p><code>star(810, 190, 30, 70, 5);</code></p>
+        <p><code>pop();</code></p> 
+      </p>
+      <h2>P5 Play</h2>
+      <b>Version Control</b>
+      <p class="ingredient-list">
+        <p><code>"https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"</code></p>
+        <p><code>"https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"</code></p>
+        <p><code>"p5.play.js"</code></p>
       </p>
     </div>
   </body>
 </html>
+
+
