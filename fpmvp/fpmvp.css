@@ -1,0 +1,19 @@
+body {
+    background-color: #d1cd88;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #303030;
+  }
+
+.mvp-container {
+    width: 80%;
+    margin: auto;
+    margin-top: 5rem;
+  }
+  
+  .picture {
+    width: 600px;
+    border-radius: 1px;
+    padding: 20px;
+    object-fit: contain;
+    aspect-ratio: 2;
+  }

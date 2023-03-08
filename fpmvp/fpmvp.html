@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./fpmvp.css" />
+  </head>
+  <body>
+    <div class="mvp-container">
+      <div>
+        <h1>Final Project MVP Writeup</h1>
+        <h2>Overview and Usage</h2>
+        <p class="intro-paragraph">
+           This final project prototype is intended to serve as a MVP of my final project. I have created 
+           an artboard on p5 that currently is able to save and clear the artboard as well as change the 
+           artboards background color and draw lines. This is the first iteration of my final. 
+          <img 
+          class="picture"
+          src="/images/mvp_vid.gif" 
+          alt="GIF of my prototype artboard that can clear the board, change the background color and draw lines"
+          />
+        </p>
+        <h2>Development Process</h2>
+        <p>
+          <ul>
+            <li>Created a canvas to be my artboard</li>
+            <li>Implemented a slider using the createSlider function that changes the background color of the canvas</li>
+            <li>I created a button that implemented the save method to save the artboard to the users computer</li>
+            <li>I created a clear button and worked through different methods of clearing the artboard and looked at many examples online</li>
+            <li>I created a button to draw lines and implemented a method to draw lines on mouse press that I had 
+                used in my sketches. 
+            </li>
+            <img 
+            class="picture"
+            src="/images/mvp_unfinished.jpeg" 
+            alt="Image of a grey blank artboard"
+            />
+          </ul>
+        </p>
+        <h2>Issue Deep-Dive</h2>
+        <p>
+            One issue I had was trying to create a function that would clear the artboard. after looking 
+            into the clear and remove methods from p5 I realized that those methods would not perform what I wanted. 
+            After looking at some examples online, I tried to create a function that would draw a rectangle the size of 
+            the canvas over the current artboard as a way of creating a new blank canvas that was filled with the same 
+            background color that was selected. However, when I tried to draw lines again on this new artboard nothing would show up. 
+            After some trouble shooting, I figured out that the array that was storing the lines was not being cleared when the clear button was being called 
+            so the lines were being drawn on the layer under. Then I tried another method of just setting my lines array to an empty array 
+            to "clear" the artboard instead of drawing a new canvas over the existing one this worked!
+        </p>
+        <h2>Ideas and Future</h2>
+        <p>
+          The next iteration of my project will be to add additional shapes that can be drawn on the artboard 
+          as well as working on aesthetics of my buttons. 
+        </p>
+        <h2>Kudos</h2>
+        <p>
+            I want to give Kudos to Elliana and Hannah for helping troubleshoot issues 
+            and working together to discuss ideas for how to clear the artboard.  
+        </p>
+        <h2>Project scope</h2>
+        <p>
+            Not much of my project scope has changes since I completed this prototype. I think 
+            I have successfully been able to trouble shoot issues I've had so far that I can see 
+            having been problems for my final. I paced myself well too to be able to complete everything
+            I wanted for the prototype and now for the final.
+        </p>
+        <h2>Time management</h2>
+        <p>
+        I definetely spent way more time on my prototype than I anticipated. I spent close to 5 hours on it.
+        There were definetely some unexpected roadblocks such as figuring out the clear the artboard. I had 
+        expected the clear function of P5 to do the job however that function is for a different purpose than
+        the one I was trying to perform so I had to trouble shoot and try out multiple different methods of 
+        trying to clear the artboard.
+        </p>
+        <h2>Implementation Plan</h2>
+        My implementation plan hasn't really changed much. I still plan to do everything I had planned
+        for originally for my final however some of the methods and developmental processes have changed. My 
+        plan for how to incorporate different shapes based on buttons is different now. I will now be having 
+        a single variable that changes to reflect the button that was selected and the shape that will be drawn
+        as opposed to having a variable for each shape.  
+      </div>
+    </div>
+  </body>
+</html>
