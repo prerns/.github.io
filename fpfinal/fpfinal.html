@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./fpfinal.css" />
+  </head>
+  <body>
+    <div class="final-container">
+      <div>
+        <h1>Final Project Writeup</h1>
+        <h2>Overview and Usage</h2>
+        <p class="intro-paragraph">
+           This final project artboard is intended to be a art board for a user to draw on and doodle on. 
+           Users have the ability to change the canvas color, drawing lines, rectangles and circles as well 
+           as changing the color of the shapes you can draw. Finally, users can clear the canvas and save 
+           their doodles to their computers. Try it out below!
+           <div class="tile-grid">
+            <a href="https://prerns.github.io/final/" style="--color: var(--orange)"
+            alt="Link to Artboard">
+                <div>Artboard</div>
+            </a>
+          </div>
+          <img 
+          class="picture"
+          src="/images/final.gif" 
+          alt="GIF of the final artboard that can doodle with multiple shapes, colors and can clear and save"
+          />
+        </p>
+        <h2>Development Process</h2>
+        <p>
+          <ul>
+            <li>Starting off with my prototype that could draw lines, I adapted that method to draw rectangles</li>
+            <li>When the rectangles worked, I adapted that method to draw cricles and created a button for that</li>
+            <li>After running into some issues of not being able to toggle on and off between shapes, I trouble shooted 
+                and was able to make all the buttons work independently
+            </li>
+            <li>Created a task bar on the side of the canvas to act seperate from the canvas and not interfere with 
+                functions such as mouseIsPressed, to place all the buttons
+            </li>
+            <li>As part of my stretch goal, I implemeted a color picker that would reflect the color of the things
+                drawn
+            </li>
+            <li>Added lables to the color slider and color picker to let users know what they can use them for</li>
+            <img 
+            class="picture"
+            src="/images/final_unfinished.jpeg" 
+            alt="Image of plain yellow artboard"
+            />
+          </ul>
+        </p>
+        <h2>Issue Deep-Dive</h2>
+        <p>
+            An issue that I had was that once I had all the shapes implemented when I pressed the circle button and drew circles
+            and then switched to the rectangle button the circles would disappear and I could draw rectangles. When 
+            I switched back to circles the circles would appear again and the rectangles would disappear. After reviewing the 
+            methods for drawing each shape, I noticed that I was adding the shape to the shapes array as well as drawing the shapes
+            within the array inside of the button pressed method call. After talking to Hannah, she suggested trying to take 
+            actually drawing the shapes within the array outside of the button press method and put it in my draw loop. 
+            This is because I want to draw the shapes in the other arrays no matter what button is pressed and currently were
+            only being drawn if their shapes button was pressed. When I moved the drawing from the arrays for each shape 
+            out into the draw loop my issue was fixed.
+        </p>
+        <h2>Ideas and Future</h2>
+        <p>
+          The next iteration of my project I want to be able to change the size of the shapes that are drawn. 
+          This could be implemented with a slider that could refelct how large the user wants the shape to be drawn.
+        </p>
+        <h2>Kudos</h2>
+        <p>
+            I want to give Kudos to Elliana and Hannah for helping troubleshoot issues and working together to discuss differenet methods.  
+        </p> 
+      </div>
+    </div>
+  </body>
+</html>
